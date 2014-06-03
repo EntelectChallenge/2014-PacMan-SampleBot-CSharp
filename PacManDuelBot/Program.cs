@@ -10,9 +10,9 @@ namespace PacManDuelBot
         private const int _WIDTH = 19;
         private const int _HEIGHT = 22;
         private const int _PORTAL1_X = 10;
-        private const int _PORTAL1_Y = 18;
-        private const int _PORTAL2_X = 0;
-        private const int _PORTAL2_Y = 10;
+        private const int _PORTAL1_Y = 0;
+        private const int _PORTAL2_X = 10;
+        private const int _PORTAL2_Y = 18;
         private const char _WALL = '#';
         private const char _PLAYER_SYMBOL = 'A';
         private const String _OUTPUT_FILE_NAME = "game.state";
@@ -68,10 +68,10 @@ namespace PacManDuelBot
                     moveList.Add(new Point { X = currentPoint.X - 1, Y = currentPoint.Y});
 
             if (currentPoint.X.Equals(_PORTAL1_X) && currentPoint.Y.Equals(_PORTAL1_Y))
-                moveList.Add(new Point { X = _PORTAL2_Y, Y = _PORTAL2_X });
+                moveList.Add(new Point { X = _PORTAL2_X, Y = _PORTAL2_Y });
 
             if (currentPoint.X.Equals(_PORTAL2_X) && currentPoint.Y.Equals(_PORTAL2_Y))
-                moveList.Add(new Point { X = _PORTAL1_Y, Y = _PORTAL1_X });
+                moveList.Add(new Point { X = _PORTAL1_X, Y = _PORTAL1_Y });
 
             return moveList;
         }
